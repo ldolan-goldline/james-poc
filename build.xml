@@ -121,7 +121,7 @@
 
  <target name="phploc" description="Measure project size using PHPLOC">
   <exec executable="C:\Users\LDOLAN\WAMP\php\php.exe">
-   <arg line="'${basedir}/build/tools/phploc.phar' --count-tests" />
+   <arg line="${basedir}/build/tools/phploc.phar --count-tests" />
    <arg path="${basedir}/src" />
    <arg path="${basedir}/tests" />
   </exec>
@@ -155,7 +155,7 @@
  
      <exec executable="cmd">
         <arg value="/c"/>
-        <arg value="'${basedir}/build/tools/phploc'"/>
+        <arg value="${basedir}/build/tools/phploc"/>
         <arg value="--count-tests" />
         <arg value="--log-csv" />
         <arg path="${basedir}/build/logs/phploc.csv" />
@@ -174,7 +174,7 @@
          description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment.">
   <exec executable="cmd" taskname="pdepend">
     <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/pdepend'"/>
+    <arg value="${basedir}/build/tools/pdepend"/>
    <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
    <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
    <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -189,7 +189,7 @@
          description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="cmd" taskname="phpmd">
    <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpmd'"/>
+    <arg value="${basedir}/build/tools/phpmd"/>
    <arg path="${basedir}/src" />
    <arg value="text" />
    <arg path="${basedir}/build/phpmd.xml" />
@@ -204,7 +204,7 @@
          description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
   <exec executable="cmd" taskname="phpmd">
       <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpmd'"/>
+    <arg value="${basedir}/build/tools/phpmd"/>
    <arg path="${basedir}/src" />
    <arg value="xml" />
    <arg path="${basedir}/build/phpmd.xml" />
@@ -220,7 +220,7 @@
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="cmd" taskname="phpcs">
        <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpcs'"/>
+    <arg value="${basedir}/build/tools/phpcs"/>
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
@@ -240,7 +240,7 @@
         taskname="phpcs">
       <!-- output="/dev/null" this is an attribute pointing to where phps-ci should output, but it gets access denied... removing.-->
        <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpcs'"/>
+    <arg value="${basedir}/build/tools/phpcs"/>
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=PSR2" />
@@ -258,7 +258,7 @@
          description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="cmd" taskname="phpcpd">
        <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpcpd'"/>
+    <arg value="${basedir}/build/tools/phpcpd"/>
    <arg path="${basedir}/src" />
   </exec>
 
@@ -271,7 +271,7 @@
          description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
   <exec executable="cmd" taskname="phpcpd">
        <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpcpd'"/>
+    <arg value="${basedir}/build/tools/phpcpd"/>
    <arg value="--log-pmd" />
    <arg path="${basedir}/build/logs/pmd-cpd.xml" />
    <arg path="${basedir}/src" />
@@ -286,7 +286,7 @@
          description="Run unit tests with PHPUnit">
   <exec executable="cmd" resultproperty="result.phpunit" taskname="phpunit">
        <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpunit'"/>
+    <arg value="${basedir}/build/tools/phpunit"/>
    <arg value="--configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
   </exec>
@@ -300,7 +300,7 @@
          description="Run unit tests with PHPUnit (without generating code coverage reports)">
   <exec executable="cmd" failonerror="true" taskname="phpunit">
        <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpunit'"/>
+    <arg value="${basedir}/build/tools/phpunit"/>
    <arg value="--configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
    <arg value="--no-coverage"/>
@@ -315,7 +315,7 @@
          description="Generate project documentation using phpDox">
      <exec executable="cmd" dir="${basedir}/build" taskname="phpdox">
       <arg value="/c"/>
-    <arg value="'${basedir}/build/tools/phpdox'"/>
+    <arg value="${basedir}/build/tools/phpdox"/>
      </exec>
 
   <property name="phpdox.done" value="true"/>
