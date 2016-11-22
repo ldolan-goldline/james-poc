@@ -106,7 +106,7 @@
  <target name="lint"
          unless="lint.done"
          description="Perform syntax check of sourcecode files">
-  <apply executable="php" taskname="lint">
+  <apply executable="php" taskname="lint" resultproperty="result.phplint">
    <arg value="-l" />
 
    <fileset dir="${basedir}/src">
@@ -333,10 +333,23 @@
     </not>
    </condition>
   </fail>
+    <fail message="php parse errors">
+   <condition>
+    <not>
+     <equals arg1="${result.phplint}" arg2="0"/>
+    </not>
+   </condition>
+  </fail>
  </target>
     
     <target name="deploy">
       <copy todir="C:\Users\LDOLAN\WAMP\apache2\htdocs" overwrite="true">
+        <fileset dir="${basedir}\src"/>
+      </copy>
+    </target>
+    
+    <target name="deploy-james">
+      <copy todir="C:\Users\JMENDOZA\WAMP\apache2\htdocs" overwrite="true">
         <fileset dir="${basedir}\src"/>
       </copy>
     </target>

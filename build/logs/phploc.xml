@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phploc>
-  <loc>3</loc>
-  <lloc>0</lloc>
+  <loc>4</loc>
+  <lloc>1</lloc>
   <llocClasses>0</llocClasses>
   <llocFunctions>0</llocFunctions>
-  <llocGlobal>0</llocGlobal>
+  <llocGlobal>1</llocGlobal>
   <cloc>0</cloc>
   <ccn>0</ccn>
   <ccnMethods>0</ccnMethods>
@@ -51,5 +51,5 @@
   <methodLlocAvg>0</methodLlocAvg>
   <methodLlocMax>0</methodLlocMax>
   <namespaces>0</namespaces>
-  <ncloc>3</ncloc>
+  <ncloc>4</ncloc>
 </phploc>

@@ -1,4 +1,4 @@
 <html>
 <head></head>
-<body>hello world from ant project. Change 1.</body>
+<body>hello world.</body>
 </html>
