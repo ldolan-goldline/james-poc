@@ -48,6 +48,10 @@
  <target name="full-build"
          depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
+    
+<target name="full-build-deploy"
+         depends="prepare,static-analysis,phpunit,phpdox,-check-failure,deploy"
+         description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="full-build-parallel"
          depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure"
@@ -330,4 +334,12 @@
    </condition>
   </fail>
  </target>
+    
+    <target name="deploy">
+      <copy todir="C:\Users\LDOLAN\WAMP\apache2\htdocs" overwrite="true">
+        <fileset dir="${basedir}\src"/>
+      </copy>
+    </target>
+    
+    
 </project>
