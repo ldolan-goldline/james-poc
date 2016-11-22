@@ -109,7 +109,7 @@
   <apply executable="php" taskname="lint" resultproperty="result.phplint">
    <arg value="-l" />
 
-   <fileset dir="${basedir}/src">
+   <fileset dir="${basedir}/web">
     <include name="**/*.php" />
     <modified />
    </fileset>
@@ -126,7 +126,7 @@
  <target name="phploc" description="Measure project size using PHPLOC">
   <exec executable="C:\Users\LDOLAN\WAMP\php\php.exe">
    <arg line="${basedir}/build/tools/phploc.phar --count-tests" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
    <arg path="${basedir}/tests" />
   </exec>
  </target>
@@ -140,12 +140,12 @@
       <arg value="- -log-csv" />
       <arg value="- -count-tests" />
       <arg value="${basedir}/build/logs/phploc.csv" />
-      <arg path="${basedir}/src" />
+      <arg path="${basedir}/web" />
       <arg path="${basedir}/tests" />
   </exec>
   <exec executable="${phploc}" taskname="phploc">
    <arg value="- -count-tests" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
    <arg path="${basedir}/tests" />
   </exec>
 
@@ -165,7 +165,7 @@
         <arg path="${basedir}/build/logs/phploc.csv" />
         <arg value="--log-xml" />
         <arg path="${basedir}/build/logs/phploc.xml" />
-        <arg path="${basedir}/src" />
+        <arg path="${basedir}/web" />
         <arg path="${basedir}/tests" />
     </exec>
 
@@ -182,7 +182,7 @@
    <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
    <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
    <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
   </exec>
 
   <property name="pdepend.done" value="true"/>
@@ -194,7 +194,7 @@
   <exec executable="cmd" taskname="phpmd">
    <arg value="/c"/>
     <arg value="${basedir}/build/tools/phpmd"/>
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
    <arg value="text" />
    <arg path="${basedir}/build/phpmd.xml" />
   </exec>
@@ -209,7 +209,7 @@
   <exec executable="cmd" taskname="phpmd">
       <arg value="/c"/>
     <arg value="${basedir}/build/tools/phpmd"/>
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
    <arg value="xml" />
    <arg path="${basedir}/build/phpmd.xml" />
    <arg value="--reportfile" />
@@ -228,7 +228,7 @@
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
    <arg path="${basedir}/tests" />
   </exec>
 
@@ -250,7 +250,7 @@
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
    <arg path="${basedir}/tests" />
   </exec>
 
@@ -263,7 +263,7 @@
   <exec executable="cmd" taskname="phpcpd">
        <arg value="/c"/>
     <arg value="${basedir}/build/tools/phpcpd"/>
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
   </exec>
 
   <property name="phpcpd.done" value="true"/>
@@ -278,7 +278,7 @@
     <arg value="${basedir}/build/tools/phpcpd"/>
    <arg value="--log-pmd" />
    <arg path="${basedir}/build/logs/pmd-cpd.xml" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/web" />
   </exec>
 
   <property name="phpcpd.done" value="true"/>
@@ -344,13 +344,13 @@
     
     <target name="deploy">
       <copy todir="C:\Users\LDOLAN\WAMP\apache2\htdocs" overwrite="true">
-        <fileset dir="${basedir}\src"/>
+        <fileset dir="${basedir}\web"/>
       </copy>
     </target>
     
     <target name="deploy-james">
       <copy todir="C:\Users\JMENDOZA\WAMP\apache2\htdocs" overwrite="true">
-        <fileset dir="${basedir}\src"/>
+        <fileset dir="${basedir}\web"/>
       </copy>
     </target>
     
