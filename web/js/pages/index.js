@@ -6,7 +6,7 @@ com.goldline.pagedriver = function() {
     
     var myNumber = 2 + 4;
     var myNumberVm = new com.goldline.vm('myNumber');
-    myNumberVm.updateInner(myNumber);
+    myNumberVm.updateInner(true, myNumber);
     
     
     
@@ -25,7 +25,7 @@ com.goldline.pagedriver = function() {
 
     var myDateTime = currMonth +'/'+ currDay +'/'+ currYear +' '+ currHour +":"+ currMinute +' '+ currAmPm;
     var myDateTimeVm = new com.goldline.vm('myDateTime');
-    myDateTimeVm.updateInner(myDateTime);
+    myDateTimeVm.updateInner(true, myDateTime);
 
 
 };
