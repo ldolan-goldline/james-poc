@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phploc>
   <loc>5</loc>
-  <lloc>0</lloc>
+  <lloc>1</lloc>
   <llocClasses>0</llocClasses>
   <llocFunctions>0</llocFunctions>
-  <llocGlobal>0</llocGlobal>
+  <llocGlobal>1</llocGlobal>
   <cloc>0</cloc>
   <ccn>0</ccn>
   <ccnMethods>0</ccnMethods>
