@@ -13,6 +13,5 @@
         this text will be changed with a number on page load.
     </div>
 
-
 </body>
 </html>

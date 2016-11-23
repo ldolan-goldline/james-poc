@@ -28,10 +28,15 @@ com.goldline.vm = function(elementId) {
     this.element = document.getElementById(elementId);
 
     /**
+     * @param {Boolean} doWork Determines whether the innervalue should be updated. Provide true or false.
      * @param {String} newValue The text/html to set the innerHTML to.
      */
-    this.updateInner = function(newValue) {
-        vm.element.innerHTML = newValue;
+    this.updateInner = function( doWork , newValue) {
+        if (doWork === true) {
+            vm.element.innerHTML = newValue;
+        } else {
+            console.warn('doWork is false, not updating value');
+        }
     };
 
     /**
