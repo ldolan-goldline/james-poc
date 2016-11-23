@@ -1,8 +1,6 @@
 <html>
 <head></head>
 <body>
-    hello world. 
-    <br />
-    Lance Dolan name HERE!
+    Hello World! It's us, Lance Dolan &amp; James.
 </body>
 </html>
