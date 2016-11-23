@@ -1,6 +1,27 @@
 <html>
 <head></head>
 <body>
-    Hello World! It's us, Lance Dolan &amp; James. The local time is 2016/11/23 11:42pm PST.
+    Hello World! It's us, Lance Dolan &amp; James.<br><br>
+    
+    
+    The local time is 
+<script type="application/javascript">
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+today = mm+'/'+dd+'/'+yyyy;
+document.write(today + '.');
+</script>
+    
 </body>
 </html>
